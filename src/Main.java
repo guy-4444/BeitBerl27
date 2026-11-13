@@ -1,43 +1,31 @@
-import lesson3.Animal;
-import lesson3.Car;
+import homework3.BankAccount;
+import homework3.Bank;
 
-public class Main {
-
-    public static void main(String[] args) {
-        System.out.println("Hello Main");
-
-        Car c1 = new Car("Mitsubishi Carisma", 1998);
-        c1.km = 100_000;
-        c1.consumption = 13.4;
-        c1.hp = 90;
-
-        Car c2 = new Car("Mercedes C", 1990);
-        c2.km = 200_000;
-        c2.consumption = 8.4;
-        c2.hp = 200;
-        c2.isHybrid = true;
-
-        c1.print();
-        c2.print();
-
-        Car.printLastID();
-
-
-
-        Animal a2 = new Animal("Jackal", 1900);
-
-
-        Animal a3 = new Animal("Elephant", "Yossi", 1980);
-
-        if (a3.getType().equals("Elephant")) {
-
-        }
-
-
-
+public class Main
+{
+    public static void main(String[] args)
+    {
+        BankAccount a,b,c;
+        a = new BankAccount("Yotam", 999999999);
+        b = new BankAccount("Eyal", 1);
+        System.out.println(a.getAccountId() + " " + b.getAccountId());
+        b.deposit(500);
+        a.withdraw(200);
+        a.transferTo(b,300);
+        System.out.println(b.getBalance());
+        b.withdraw(9000);
+        System.out.println(b.getBalance());
+        System.out.println(a.getAccountInfo() + " " + b.getAccountInfo());
+        System.out.println(homework3.BankAccount.getTotalAccounts());
+        System.out.println(homework3.BankAccount.getNextAccountId());
+        c = new BankAccount("Omer", 7);
+        System.out.println(c.getAccountId());
+        b.deposit(-2);
+        b.transferTo(b,300);
+        System.out.println(b.getAccountInfo());
+        Bank leumi = new Bank("leumi", 7);
+        leumi.setAccounts(a,b);
+        System.out.println(leumi.getTotalBalance());
+        System.out.println(leumi.getBankInfo());
     }
-
-
-
-
 }
