@@ -25,7 +25,7 @@ public class Main {
 
 
         Animal a2 = new Animal("Jackal", 1900);
-        a2.name = "Avi";
+
 
         Animal a3 = new Animal("Elephant", "Yossi", 1980);
 
